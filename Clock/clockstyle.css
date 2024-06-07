@@ -1,0 +1,23 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100vh;
+    background: linear-gradient(to bottom , #99fcfc,#03aeb7)center;
+    
+}
+h1{
+
+   margin-left: 25rem;
+   margin-top: 1rem;
+}
+.clock-face{
+  display: relative;
+  border-radius: 50%;
+  border: 15px solid white;
+  height:300px;
+  width:300px;
+  background: rgb(0, 0, 0);
+  border-color: rgb(9, 211, 251);
+}
