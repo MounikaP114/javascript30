@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Variables</title>
+  </head>
+  <body>
+    <center>
+      <h2>Playing with CSS Variables  and <h1>JS</h1></h2>
+      <div>
+        <label for="Spacing" >Spacing:</label>
+        <input type="range" min="0" max="200" data-sizing="px" name="space" value="10" >
+        <label for="Blur"  >Blur:</label>
+        <input type="range" min="0" max="25" data-sizing="px" name="blur" value="10">
+        <label for="Base"  >Base:</label>
+        <input type="color" name="base" color="2ecc71">
+      </div>
+      
+      <img src="https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=600">
+    </center>
+    
+    <style>
+      :root{
+        --blur:10px;
+        --spacing:25px;
+        --base:#cc3e2e;
+      }
+      body{
+          
+
+      }
+      img{
+          margin-top: 20px;
+          padding:var(--spacing);
+          background-color: var(--base);
+          filter: blur(var(--blur));
+      }
+      h1{
+          color: var(--base);
+      }
+    </style>
+
+    <script>
+      const inputs= document.querySelectorAll('.controls input')
+
+      function handleUpdate(){
+        const suffix=this.dataset.sizing || ''
+        console.log(this.name)
+
+        document.documentElement.style.setProperty(`${this.name} ${this.value} + suffix`)
+      }
+        inputs.forEach(element => element.addEventListener('change',handleUpdate))
+        inputs.forEach(element => element.addEventListener('mouseover', handleUpdate))
+      
+    </script>
+  </body>
+</html>
